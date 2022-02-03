@@ -17,6 +17,7 @@ class categoryController extends Controller
 	        'categoryDescription' => 'required',
    	    ]);
 
+	    
     	$categories= new Category;
     	$categories->categoryName=$request->categoryName;
     	$categories->categoryDescription=$request->categoryDescription;
@@ -42,8 +43,8 @@ class categoryController extends Controller
     	$categories->categoryDescription=$request->categoryDescription;
     	$categories->categoryPublication=$request->categoryPublication;
     	$categories->save();
+		 
     	return redirect('/category/manage')->with('message','Category product update Successfully insert');
-
 	 }
 
 	 public function deleteCategory($id){
